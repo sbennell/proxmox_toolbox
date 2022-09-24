@@ -166,11 +166,11 @@ main_menu(){
     echo -e "${MENU}**${NUMBER} 0)${MENU} Exit ${NORMAL}"
     echo " "
     echo -e "${MENU}*********************************************${NORMAL}"
-    echo -e "${ENTER_LINE}Please enter a menu option number or ${RED_TEXT}enter to exit. ${NORMAL}"
+    echo -e "${ENTER_LINE}Please enter a menu option number or ${RED_TEXT}X to exit. ${NORMAL}"
     read -rsn1 opt
 	while [ opt != '' ]
   do
-    if [[ $opt = "" ]]; then
+    if [[ $opt = "X" ]]; then
       exit;
     else
       case $opt in
