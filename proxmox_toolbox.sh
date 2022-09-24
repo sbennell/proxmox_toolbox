@@ -14,7 +14,7 @@
 
 # USAGE
 # You can use this tool either with:
-# wget -qO proxmox_toolbox.sh https://raw.githubusercontent.com/Tontonjo/proxmox_toolbox/main/proxmox_toolbox.sh
+# wget -qO proxmox_toolbox.sh https://raw.githubusercontent.com/sbennell/proxmox_toolbox/main/proxmox_toolbox.sh
 # bash proxmox_toolbox.sh
 
 # SOURCES:
@@ -101,7 +101,7 @@ update () {
 		# Check if the /usr/bin/proxmox-update entry for update is already created
 		if [ ! -f /usr/bin/proxmox-update ]; then
 			echo "- Retreiving new bin"
-			wget -qO "/usr/bin/proxmox-update"  https://raw.githubusercontent.com/Tontonjo/proxmox_toolbox/main/bin/proxmox-update && chmod +x "/usr/bin/proxmox-update"
+			wget -qO "/usr/bin/proxmox-update"  https://raw.githubusercontent.com/bennell/proxmox_toolbox/main/bin/proxmox-update && chmod +x "/usr/bin/proxmox-update"
 			update
 		else
 		echo "- Updating System"
@@ -124,7 +124,7 @@ update () {
 		fi
 }
 snmpconfig() {
-wget -qO /etc/snmp/snmpd.conf https://github.com/Tontonjo/proxmox_toolbox/raw/main/snmp/snmpd.conf
+wget -qO /etc/snmp/snmpd.conf https://github.com/sbennell/proxmox_toolbox/raw/main/snmp/snmpd.conf
 }
 
 getcontentcheck() {
@@ -262,7 +262,7 @@ main_menu(){
 				else
 					echo "- git already installed"
 				fi
-				git clone -q https://github.com/Tontonjo/proxmox_toolbox.git
+				git clone -q https://github.com/sbennell/proxmox_toolbox.git
 					if [ -d "$pve_log_folder" ]; then
 						echo "- Host is a PVE Host"	
 						# Put filter.d/proxmox-backup-server.conf contents to /etc/fail2ban/filter.d/proxmox-backup-server.conf
@@ -411,7 +411,7 @@ main_menu(){
 				else
 					echo "- git already installed"
 				fi
-				git clone -q https://github.com/Tontonjo/proxmox_toolbox.git
+				git clone -q https://github.com/sbennell/proxmox_toolbox.git
 				if [ $(dpkg-query -W -f='${Status}' snmpd 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
 					apt-get install -y snmpd libsnmp-dev;
 				else
